@@ -1,0 +1,4 @@
+{
+    "name": "Snyk Monitor",
+    "description": "Run snyk monitor on the default project branch"
+}
