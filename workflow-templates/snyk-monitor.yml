@@ -1,0 +1,16 @@
+name: Run snyk monitor on the default project branch
+on:
+  push:
+    branches: $default-branch
+jobs:
+  vulnerability-monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Run Snyk to check for vulnerabilities
+        uses: snyk/actions/gradle-jdk11@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: --severity-threshold=high --org=68d49aae-66e0-4c27-b3f6-ecfe7b55ff05 
+          command: monitor
