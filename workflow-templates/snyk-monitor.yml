@@ -1,4 +1,4 @@
-name: Run snyk monitor on the default project branch
+name: Snyk Monitor
 on:
   push:
     branches: $default-branch
