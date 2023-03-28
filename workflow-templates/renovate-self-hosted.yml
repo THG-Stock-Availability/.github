@@ -1,7 +1,7 @@
 name: Renovate
 on:
   schedule:
-    - cron: '15 * * * *'
+    - cron: '0 0/6 * * *'
 jobs:
   renovate:
     runs-on: ubuntu-latest
@@ -10,8 +10,8 @@ jobs:
         id: get_token
         uses: tibdex/github-app-token@v1
         with:
-          private_key: ${{ secrets.private_key }}
-          app_id: ${{ secrets.app_id }}
+          private_key: ${{ secrets.renovate_private_key }}
+          app_id: ${{ secrets.renovate_app_id }}
 
       - name: Checkout
         uses: actions/checkout@v3.3.0
